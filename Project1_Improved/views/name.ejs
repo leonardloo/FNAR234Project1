@@ -1,0 +1,49 @@
+<html>
+<head><title>
+Introduction
+</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<center>	
+<img src="https://clcrlsconference.files.wordpress.com/2014/06/welcome.jpg" width="400px" height="200px">
+<form role="form" id="nameform">
+  <div class="form-group">
+    <label for="email">Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="Gender">Gender</label>
+    <input type="text" class="form-control" id="gender" name="gender" required>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<script>
+$('#nameform').submit(function(e) {
+	e.preventDefault();
+	var $form = $(this),
+        $formId = $form.attr('id');
+	$.ajax({
+        url: "/submitname",
+        type: "GET",
+        data: $("#" + $formId).serialize(),
+        success: function(data) {
+        	if (data !== null && data.success) {
+        		location.href = "/home";
+        	}
+        }
+    });
+});
+</script>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title>Evening Lake</title>
+</head>
+<body>
+
+<script>
+$(document).ready(function() {
+	setTimeout(function() { $('#email').fadeIn() }, 2000);
+});
+</script>
+
+<div id="email" class="alert alert-warning" hidden>
+<%= name %>, you received an email!
+<div id="emailentry" hidden><%= email %></div>
+</div>
+
+<script>
+$('#email').click(function() {
+	$('#email').fadeOut();
+	setTimeout(function(){ window.open($('#emailentry').text(), '_blank'); }, 1000);
+	setTimeout(function(){ $('#feelings').fadeIn(); }, 2000);
+})
+</script>
+
+<iframe src='http://newhive.com/e/56071563067d7b3cfeacc9ba?autoplay=1' style='width:100%; height:600px; border:none; margin:0' allowfullscreen></iframe>
+
+<div class="row" id="feelings" hidden>
+<button id="happy" class="col-md-4 btn btn-success">Happy</button>
+<button id="sad" class="col-md-4 btn btn-info">Sad</button>
+<button id="angry" class="col-md-4 btn btn-danger">Angry</button>
+</div>
+
+<script>
+$('#happy').click(function() {
+	location.href= "/home";
+});
+$('#sad').click(function() {
+	location.href= "/church";
+});
+$('#angry').click(function() {
+	location.href= "/sea";
+});
+</script>
+</body>
+</html>
