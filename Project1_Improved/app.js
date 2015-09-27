@@ -4,7 +4,17 @@ var name = "";
 var gender = "";
 
 // List of emails
-var emails = ['https://www.google.com', 'https://www.facebook.com', 'https://www.anc.com'];
+var emails = [
+'https://newhive.com/artoftheweb', 
+'https://newhive.com/artoftheweb/angry-3', 
+'https://newhive.com/artoftheweb/wall-street',
+'https://newhive.com/artoftheweb/home',
+'https://newhive.com/artoftheweb/cafe-angry',
+'https://newhive.com/artoftheweb/church',
+'https://newhive.com/artoftheweb/sad-lake',
+'https://newhive.com/artoftheweb/happy-1',
+'https://newhive.com/artoftheweb/mountain-sad', 
+];
 
 var getRandomEmail = function() {
 	return emails[Math.floor(Math.random() * emails.length)];
